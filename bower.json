@@ -1,0 +1,8 @@
+{
+  "name": "Sleephacks",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "1.2.16",
+    "restangular": "1.4.0"
+  }
+}
