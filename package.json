@@ -5,7 +5,6 @@
   "keywords": [],
   "dependencies": {
     "googleapis": "latest",
-    "underscore": "latest",
     "restangular": "latest",
     "sails": "~0.10.5",
     "sails-disk": "~0.10.0",

@@ -27,7 +27,6 @@ module.exports = {
   getCalendars: function (req, res) {
     calendar.calendarList.list({}, function(err, list) {
       if (err) sails.log.error(err)
-      console.log(list)
       res.send(list.items)
     })
   },

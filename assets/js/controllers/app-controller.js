@@ -12,7 +12,7 @@ angular.module('sleephack')
         GoogleOath.one('token').get({code: this.params.code}).then(function(results){
           $location.url($location.path())
           GoogleCalendar.getBusy().then(function(results){
-
+            console.log(results)
           })
         }.bind(this))
       }
