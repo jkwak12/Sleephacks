@@ -12,6 +12,10 @@ angular.module('sleephack', [
         templateUrl: '/templates/index.html',
         controller: 'IndexController as ctrl'
       })
+      .when('/app', {
+        templateUrl: '/templates/index.html',
+        controller: 'IndexController as ctrl'
+      })
 
 
     //RestangularProvider.setBaseUrl()
