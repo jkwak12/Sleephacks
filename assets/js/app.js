@@ -11,7 +11,7 @@ angular.module('sleephack', [
       .when('/', {
         templateUrl: '/templates/index.html',
         controller: 'IndexController as ctrl',
-        reloadOnSearch: false
+        reloadOnSearch: false //added
       })
       .when('/app', {
         templateUrl: '/templates/index.html',
