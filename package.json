@@ -4,6 +4,7 @@
   "description": "A polyphasic sleep app created as part of MHacks IV",
   "keywords": [],
   "dependencies": {
+    "google-calendar": "latest",
     "restangular": "latest",
     "sails": "~0.10.5",
     "sails-disk": "~0.10.0",

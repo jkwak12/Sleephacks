@@ -32,6 +32,15 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
+  'get /api/oauth/2': {
+    controller: 'GoogleAuth',
+    action: 'show'
+  },
+
+  'get /api/calendars': {
+    controller: 'GoogleCalendar',
+    action: 'index'
+  }
 
   /***************************************************************************
   *                                                                          *
