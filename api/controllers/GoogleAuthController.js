@@ -30,12 +30,15 @@ module.exports = {
       console.log(list)
       res.send(list.items)
     })
-    // calendar.freebusy.query({'timeMin': '2014-08-06T22:00:00Z', 'timeMax': '2014-08-12T22:00:00Z'}, function(err, list) {
-    //   if (err) sails.log.error(err)
-    //   console.log(list)
-    //   //res.send(list.items)
-    //   res.send(list)
-    // })
+  },
+
+  getBusyTimes: function(req, res) {
+    calendar.freebusy.query({'timeMin': '2014-08-06T10:00:00-07:00', 'timeMax': '2014-08-12T10:00:00-07:00'}, function(err, list) {
+      if (err) sails.log.error(err)
+      console.log(list)
+      //res.send(list.items)
+      res.send(list)
+    })
   }
 
 
