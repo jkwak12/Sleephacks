@@ -9,7 +9,7 @@ angular.module('sleephack', [
 
     $routeProvider
       .when('/', {
-        templateUrl: '',
+        templateUrl: '/templates/index.html',
         controller: 'IndexController as ctrl'
       })
 
