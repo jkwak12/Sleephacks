@@ -2,9 +2,6 @@
   "name": "Sleephacks",
   "version": "0.0.1",
   "description": "A polyphasic sleep app created as part of MHacks IV",
-  "engines": {
-    "node": "0.10.x"
-  }
   "keywords": [],
   "dependencies": {
     "restangular": "latest",
