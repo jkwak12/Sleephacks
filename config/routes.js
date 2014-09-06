@@ -32,6 +32,20 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
+  'get /api/oauth/initial': {
+    controller: 'GoogleAuth',
+    action: 'getOauthUrl'
+  },
+
+  'get /api/oauth/token': {
+    controller: 'GoogleAuth',
+    action: 'getToken'
+  },
+
+  'get /api/calendars': {
+    controller: 'GoogleAuth',
+    action: 'getCalendars'
+  }
 
   /***************************************************************************
   *                                                                          *
