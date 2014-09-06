@@ -14,10 +14,8 @@ angular.module('sleephack', [
       })
       .when('/app', {
         templateUrl: '/templates/index.html',
-        controller: 'AppController as ctrl'
+        controller: 'AppController as ctrl',
+        reloadOnSearch: false
       })
-
-
-    //RestangularProvider.setBaseUrl()
 
   })
