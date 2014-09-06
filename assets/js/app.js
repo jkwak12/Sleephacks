@@ -10,7 +10,8 @@ angular.module('sleephack', [
     $routeProvider
       .when('/', {
         templateUrl: '/templates/index.html',
-        controller: 'IndexController as ctrl'
+        controller: 'IndexController as ctrl',
+        reloadOnSearch: false
       })
       .when('/app', {
         templateUrl: '/templates/index.html',
