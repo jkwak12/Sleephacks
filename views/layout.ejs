@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us" ng-app="sleephack">
   <head>
     <title>True Sleephacker</title>
     <!-- Viewport mobile tag for sensible mobile support -->
@@ -33,21 +33,19 @@
     -->
 
     <!--STYLES-->
-    <link rel="stylesheet" href="/styles/font-awesome.min.css">
-    <link rel="stylesheet" href="/styles/ie/v8.css">
-    <link rel="stylesheet" href="/styles/importer.css">
-    <link rel="stylesheet" href="/styles/skel.css">
-    <link rel="stylesheet" href="/styles/style-mobile.css">
-    <link rel="stylesheet" href="/styles/style-narrow.css">
-    <link rel="stylesheet" href="/styles/style-normal.css">
-    <link rel="stylesheet" href="/styles/style-wide.css">
-    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/ie/v8.css">
+    <link rel="stylesheet" href="/css/skel.css">
+    <link rel="stylesheet" href="/css/style-mobile.css">
+    <link rel="stylesheet" href="/css/style-narrow.css">
+    <link rel="stylesheet" href="/css/style-normal.css">
+    <link rel="stylesheet" href="/css/style-wide.css">
+    <link rel="stylesheet" href="/css/style.css">
     <!--STYLES END-->
   </head>
 
   <body>
-    <%- body %>
-
+    <div id="App" ng-view=""></div>
 
 
     <!--
@@ -72,7 +70,7 @@
     -->
 
     <!--TEMPLATES-->
-    
+    <script type="text/javascript" src="/jst.js"></script>
     <!--TEMPLATES END-->
 
 
@@ -101,11 +99,18 @@
 
     <!--SCRIPTS-->
     <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/js/dependencies/angular/angular.js"></script>
+    <script src="/js/dependencies/angular-route/angular-route.js"></script>
+    <script src="/js/dependencies/jquery/jquery-2.1.1.js"></script>
+    <script src="/js/dependencies/lodash/lodash.js"></script>
+    <script src="/js/dependencies/restangular/restangular.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/controllers/index-controller.js"></script>
     <script src="/js/init.js"></script>
     <script src="/js/jquery.min.js"></script>
     <script src="/js/jquery.poptrox.min.js"></script>
     <script src="/js/jquery.scrolly.min.js"></script>
-    <script src="/js/skel.min.js"></script>
     <!--SCRIPTS END-->
   </body>
 </html>
