@@ -1,5 +1,5 @@
 {
-  "name": "Sleepcatcher",
+  "name": "Sleephacks",
   "version": "0.0.1",
   "description": "A polyphasic sleep app created as part of MHacks IV",
   "keywords": [],
@@ -29,6 +29,6 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/jkwak12/mygithubpage.git"
+    "url": "git://github.com/jkwak12/Sleephacks.git"
   }
 }
