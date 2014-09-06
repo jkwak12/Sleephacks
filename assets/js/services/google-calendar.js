@@ -5,7 +5,7 @@ angular.module('sleephack')
     })
 
   })
-  .factory('GoogleCalendar', function(_, Restangular) {
+  .factory('GoogleCalendar', function(Restangular) {
     var restAngular = Restangular.withConfig(function(Configurer) {
       Configurer.setBaseUrl('/api')
     })
@@ -16,10 +16,12 @@ angular.module('sleephack')
       getBusy: function(){
         this.getList().then(function(results){
           var allCalendars = results.filter(function(result){
+            console.log(result)
             return result.id
           })
-          this.getList('', )
-        })
+          console.log(allCalendars)
+          return this.getList('busy', {calendars: allCalendars})
+        }.bind(this))
       }
     })
 

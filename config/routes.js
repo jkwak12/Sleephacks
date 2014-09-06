@@ -45,6 +45,11 @@ module.exports.routes = {
   'get /api/calendars': {
     controller: 'GoogleAuth',
     action: 'getCalendars'
+  },
+
+  'get /api/calendars/busy': {
+    controller: 'GoogleAuth',
+    action: 'getBusyTimes'
   }
 
   /***************************************************************************
