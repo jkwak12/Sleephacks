@@ -1,3 +1,35 @@
+  <div id="gConnect">
+    <button class="g-signin"
+        data-scope="https://www.googleapis.com/auth/plus.login"
+        data-requestvisibleactions="http://schemas.google.com/AddActivity"
+        data-clientId="227524362621-cgubb8e3pg6pn0sg93gkebg971gresmt.apps.googleusercontent.com"
+        data-callback="onSignInCallback"
+        data-theme="dark"
+        data-cookiepolicy="single_host_origin">
+    </button>
+  </div>
+  <div id="authOps" style="display:none">
+    <h2>User is now signed in to the app using Google+</h2>
+    <p>If the user chooses to disconnect, the app must delete all stored
+    information retrieved from Google for the given user.</p>
+    <button id="disconnect" >Disconnect your Google account from this app</button>
+
+    <h2>User's profile information</h2>
+    <div id="profile"></div>
+
+    <h2>User's friends that are visible to this app</h2>
+    <div id="visiblePeople"></div>
+
+    <h2>Authentication Logs</h2>
+    <pre id="authResult"></pre>
+  </div>
+  <div id="loaderror">
+    This section will be hidden by JQuery. If you can see this message, you
+    may be viewing the file rather than running a web server.<br />
+    The sample must be run from http or https. See instructions at
+    <a href="https://developers.google.com/+/quickstart/javascript">
+    https://developers.google.com/+/quickstart/javascript</a>.
+  </div>
 		<!-- Header -->
 			<section id="header">
 				<header>
@@ -19,21 +51,24 @@
 				Polyphasic sleep means sleeping in multiple sessions throughout the day, and can save time and cut tiredness. We take the knowledge and power of this type of sleep to bring you a way to incorporate it into your life through a nimble scheduler.</p>
 				<footer>
 					<a href="#infoBox" class="button style2 scrolly">Learn more about different polyphasic schedules</a>
-					<a href="http://sleephack.me/app" class="button style2">Pick a schedule to try</a>
+					<a href="http://sleephack.me/app" class="button style2">Make your polyphasic schedule</a>
 				</footer>
 			</section>
 
 			<article id="infoBox" class="container box style2">
 				<header>
 					<h2>Choose a polyphasic schedule for information:</h2>
-					<form action="">
-						<select name="Schedule">
-							<option value="one"></option>
-							<option value="saab">Saab</option>
-							<option value="fiat">Fiat</option>
-							<option value="audi">Audi</option>
-						</select>
-					</form>
+					<select onchange="window.location.href=this.value">
+						<option></option>
+						<option value="#first">Segmented Sleep</option>
+						<option value="#second">Siesta Sleep</option>
+						<option value="#third">Triphasic Sleep</option>
+						<option value="#fourth">Everyman Sleep</option>
+						<option value="#fifth">Dual Core Sleep</option>
+						<option value="#sixth">Uberman Sleep</option>
+						<option value="#seventh">Dymaxion Sleep</option>
+						<option value="#eighth">SPAMAYL</option>
+					</select>
 				</header>
 				<footer>
 					<a href="http://sleephack.me/app" class="button style2">Pick a schedule to try</a>
@@ -43,83 +78,83 @@
 		
 		<!-- Feature 1 -->
 			<article id="first" class="container box style1 right">
-				<a href="#" class="image fit"><img src="images/pic01.jpg" alt="" /></a>
+				<class="image fit"><img src="http://i.imgur.com/7ju4T.png" alt="" /></a>
 				<div class="inner">
 					<header>
 						<h2>Biphasic: Segmented Sleep</h2>
 					</header>
-					<p>Segmented sleep is considered the most natural sleeping pattern according to common scientific literature. It consists of two sleeps, both at night time, first going to sleep at dusk, and secondly waking at dawn, synchronized with the local lighting patterns, sunrise and sunset. If a person changes their sleep from monophasic sleep to segmented, then after some acclimatization they will experience a change in hormone regulation, energy metabolism and a profound mental clarity throughout the day, and the middle of the night. A Segmented Sleeper typically sleeps between 6 and 8 hours a day. For more info, click <a href="http://www.polyphasicsociety.com/polyphasic-sleep/overviews/segmented-sleep/">here</a>.</p>
+					<p>Segmented sleep is considered the most natural sleeping pattern. It consists of two sleeps, both at night time. For more info, click <a href="http://www.polyphasicsociety.com/polyphasic-sleep/overviews/segmented-sleep/">here</a>.</p>
 				</div>
 			</article>
 		
 		<!-- Feature 2 -->
 			<article id="second" class="container box style1 left">
-				<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
+				<class="image fit"><img src="http://i.imgur.com/wwqaD.png" alt="" /></a>
 				<div class="inner">
 					<header>
 						<h2>Biphasic: Siesta Sleep</h2>
 					</header>
-					<p>The siesta schedule consists of 5-6 hours of sleep at night and a 20 to 90 minute nap in the early afternoon. This form of sleep matches with our natural Circadian rhythm, and is commonly known by scientists to be healthier than monophasic sleep, with the short nap increasing productivity and alertness during evening hours. A biphasic sleeper typically sleeps between 5 and 7 hours a day. For more info, click <a href="http://www.polyphasicsociety.com/polyphasic-sleep/overviews/siesta/">here</a>.</p>
+					<p>The siesta schedule consists of 5-6 hours of sleep at night and a 20 to 90 minute nap in the early afternoon. This form of sleep is commonly known by scientists to be healthier than monophasic sleep. For more info, click <a href="http://www.polyphasicsociety.com/polyphasic-sleep/overviews/siesta/">here</a>.</p>
 				</div>
 			</article>
 
 			<article id="third" class="container box style1 right">
-				<a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
+				<class="image fit"><img src="http://i.imgur.com/Bn9ee.png" alt="" /></a>
 				<div class="inner">
 					<header>
 						<h2>Triphasic Sleep</h2>
 					</header>
-					<p>Triphasic is an efficient and simple schedule. There is little adaptation involved in a change from monophasic sleep to this schedule, and 3 to 5 hours extra are gained each day. The reason for its ease of adaption is that, similar to biphasic sleep, it aligns with the Circadian rhythm, with a nap after dusk, a nap before dawn, and a nap in the afternoon. A Triphasic sleeper typically sleeps between 4 and 5 hours a day. For more info, click <a href="http://www.polyphasicsociety.com/polyphasic-sleep/overviews/triphasic/">here</a>.</p>
+					<p>Triphasic is an efficient and simple schedule. There is little adaptation involved in a change from monophasic sleep to this schedule. A Triphasic sleeper typically sleeps between 4 and 5 hours a day. For more info, click <a href="http://www.polyphasicsociety.com/polyphasic-sleep/overviews/triphasic/">here</a>.</p>
 				</div>
 			</article>
 
 			<article id="fourth" class="container box style1 left">
-				<a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a>
+				<class="image fit"><img src="http://i.imgur.com/Pz1Dw.png" alt="" /></a>
 				<div class="inner">
 					<header>
 						<h2>Everyman Sleep</h2>
 					</header>
-					<p>The Everyman schedule is the most successful reduced-sleep schedule to date. It is constantly increasing in popularity, and people have achieved it without compromising their current health. While monophasic, biphasic, and triphasic schedules are all Circadian centric schedules, Everyman schedules rely on both Circadian and Ultradian Rhythms. This makes Everyman schedules have a significantly more difficult adaptation period than all of the previous schedules, as the consistency of times between sleeps matters much more. That being said, Everyman is still significantly easier than any of the nap-only schedules. Everyman schedules include Everyman 2 (E2) which is a with core sleep between 4.5 and 6 hours and two 20 minute naps; Everyman 3, with a core between 3 and 4 hours and three 20 minute naps; and Everyman 4 with a core between 1.5 and 2.5 hours, with four 20 minute naps. For more info, click <a href="http://www.polyphasicsociety.com/polyphasic-sleep/overviews/everyman/">here</a>.</p>
+					<p>The Everyman schedule is the most successful reduced-sleep schedule to date. Everyman schedules have a significantly more difficult adaptation period than all of the previous schedules. For more info, click <a href="http://www.polyphasicsociety.com/polyphasic-sleep/overviews/everyman/">here</a>.</p>
 				</div>
 			</article>	
 
 			<article id="fifth" class="container box style1 right">
-				<a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
+				<class="image fit"><img src="http://i.imgur.com/zbICA.png" alt="" /></a>
 				<div class="inner">
 					<header>
 						<h2>Dual Core Sleep</h2>
 					</header>
-					<p>Dual Core sleep is a derivative of the other schedules but with a core sleep around dusk, a core around dawn, and a number of naps in the afternoon. Dual core schedules can have the benefits of both segmented sleep and siestas and so is theoretically very healthy. DC1 is two cores totalling about 5 hours sleep, and one nap in the middle of the day. DC2 is two cores totalling about 4 hours sleep, and two naps throughout the day. DC3 is two cores totalling about 3h sleep, and three naps throughout the day.Segmented Sleep, a combination of a segmented core with other types of schedules. For more info, click <a href="http://www.polyphasicsociety.com/polyphasic-sleep/overviews/dual-core/">here</a>.</p>
+					<p>Dual Core sleep is a derivative of the other schedules. Dual core schedules can have the benefits of both segmented sleep and siestas and so is theoretically very healthy. For more info, click <a href="http://www.polyphasicsociety.com/polyphasic-sleep/overviews/dual-core/">here</a>.</p>
 				</div>
 			</article>		
 
 			<article id="sixth" class="container box style1 left">
-				<a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
+				<class="image fit"><img src="http://i.imgur.com/IGvSf.png" alt="" /></a>
 				<div class="inner">
 					<header>
 						<h2>Uberman Sleep</h2>
 					</header>
-					<p>Uberman is the most commonly attempted, and most failed of polyphasic schedules. This is largely due to a misunderstanding of the difficulties associated with its adaptation period. Uberman is the most well known nap only schedule, and is an extension of the Everyman schedules, to the point of getting rid of the core sleep entirely. While Uberman is extremely difficult, it can have great benefits by increasing the amount of time in a person’s day drastically. An Uberman will have 6 or 8 x20 minute naps a day, with total sleep time ranging from 2-3 hours a day. For more info, click <a href="http://www.polyphasicsociety.com/polyphasic-sleep/overviews/uberman-2/">here</a>.</p>
+					<p>Uberman is the most commonly attempted, and most failed of polyphasic schedules. This is largely due to a misunderstanding of the difficulties associated with its adaptation period. Uberman is the most well known nap only schedule. For more info, click <a href="http://www.polyphasicsociety.com/polyphasic-sleep/overviews/uberman-2/">here</a>.</p>
 				</div>
 			</article>	
 
 			<article id="seventh" class="container box style1 right">
-				<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+				<class="image fit"><img src="http://i.imgur.com/lmReU.png" alt="" /></a>
 				<div class="inner">
 					<header>
 						<h2>Dymaxion Sleep</h2>
 					</header>
-					<p>Dymaxion is another popularly attempted schedule, although its difficulty is even greater than Uberman, to the point of being nearly impossible. It’s predict only the genetically mutated DEC2 gene ‘very short sleepers’ can be successful following such a schedule, which would includes far less than 1% of the world population. The Dymaxion schedule was coined by Buckminster Fuller, and involves sleeping 4 times a day for 30 minutes. Even though the Dymaxion schedule does not increase available awake time any more than Uberman, it is prized for the increased convenience to the person’s social and work life. For more info, click <a href="http://www.polyphasicsociety.com/polyphasic-sleep/overviews/dymaxion/">here</a>.</p>
+					<p>Dymaxion is another popularly attempted schedule. The Dymaxion schedule involves sleeping 4 times a day for 30 minutes. For more info, click <a href="http://www.polyphasicsociety.com/polyphasic-sleep/overviews/dymaxion/">here</a>.</p>
 				</div>
 			</article>	
 
 			<article id="eigth" class="container box style1 left">
-				<a href="#" class="image fit"><img src="images/pic08.jpg" alt="" /></a>
+				<class="image fit"><img src="http://i.imgur.com/YbG5a.png" alt="" /></a>
 				<div class="inner">
 					<header>
 						<h2>SPAMAYL Sleep</h2>
 					</header>
-					<p>SPAMAYL is the younger, fresher cousin of Uberman. SPAMAYL stands for Sleep Polyphasically As Much As You Like. SPAMAYL was coined by Rasmus, and so far it seems he is the only person to be successful long term. While Uberman has a sense of extreme rigidity, SPAMAYL takes in extra sleep for extra flexibility. SPAMAYL is more flexible than Uberman, in that Rasmus could move things around for social events and a SPAMAYLer can expect to take no less than 7 naps a day, and often need as many as 10. Rasmus usually get between 2.5 and 4 hours of sleep per night. </p>
+					<p>SPAMAYL is the younger, fresher cousin of Uberman. SPAMAYL stands for Sleep Polyphasically As Much As You Like. SPAMAYL is more flexible than Uberman. For more info, click <a href="http://www.polyphasicsociety.com/polyphasic-sleep/overviews/uberman/">here</a>.</p>
 				</div>
 			</article>	
 		
@@ -150,162 +185,6 @@
 				</form>
 			</article>
 		
-		<!-- Generic -->
-		<!--
-			<article class="container box style3">
-				<header>
-					<h2>Generic Box</h2>
-					<p>Just a generic box. Nothing to see here.</p>
-				</header>
-				<section>
-					<header>
-						<h3>Paragraph</h3>
-						<p>This is a subtitle</p>
-					</header>
-					<p>Phasellus nisl nisl, varius id <sup>porttitor sed pellentesque</sup> ac orci. Pellentesque 
-					habitant <strong>strong</strong> tristique <b>bold</b> et netus <i>italic</i> malesuada <em>emphasized</em> ac turpis egestas. Morbi 
-					leo suscipit ut. Praesent <sub>id turpis vitae</sub> turpis pretium ultricies. Vestibulum sit 
-					amet risus elit.</p>
-				</section>
-				<section>
-					<header>
-						<h3>Blockquote</h3>
-					</header>
-					<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget.
-					tempus euismod. Vestibulum ante ipsum primis in faucibus.</blockquote>
-				</section>
-				<section>
-					<header>
-						<h3>Divider</h3>
-					</header>
-					<p>Donec consectetur <a href="#">vestibulum dolor et pulvinar</a>. Etiam vel felis enim, at viverra 
-					ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci 
-					facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam 
-					tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices 
-					posuere cubilia.</p>
-					<hr />
-					<p>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra 
-					ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci 
-					facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam 
-					tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices 
-					posuere cubilia.</p>
-				</section>
-				<section>
-					<header>
-						<h3>Unordered List</h3>
-					</header>
-					<ul class="default">
-						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-					</ul>
-				</section>
-				<section>
-					<header>
-						<h3>Ordered List</h3>
-					</header>
-					<ol class="default">
-						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-					</ol>
-				</section>
-				<section>
-					<header>
-						<h3>Table</h3>
-					</header>
-					<div class="table-wrapper">
-						<table class="default">
-							<thead>
-								<tr>
-									<th>ID</th>
-									<th>Name</th>
-									<th>Description</th>
-									<th>Price</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>45815</td>
-									<td>Something</td>
-									<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
-									<td>29.99</td>
-								</tr>
-								<tr>
-									<td>24524</td>
-									<td>Nothing</td>
-									<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
-									<td>19.99</td>
-								</tr>
-								<tr>
-									<td>45815</td>
-									<td>Something</td>
-									<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
-									<td>29.99</td>
-								</tr>
-								<tr>
-									<td>24524</td>
-									<td>Nothing</td>
-									<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
-									<td>19.99</td>
-								</tr>
-							</tbody>
-							<tfoot>
-								<tr>
-									<td colspan="3"></td>
-									<td>100.00</td>
-								</tr>
-							</tfoot>
-						</table>
-					</div>
-				</section>
-				<section>
-					<header>
-						<h3>Form</h3>
-					</header>
-					<form method="post" action="#">
-						<div class="row">
-							<div class="6u">
-								<input class="text" type="text" name="name" id="name" value="" placeholder="John Doe" />
-							</div>
-							<div class="6u">
-								<input class="text" type="text" name="email" id="email" value="" placeholder="johndoe@domain.tld" />
-							</div>
-						</div>
-						<div class="row">
-							<div class="12u">
-								<select name="department" id="department">
-									<option value="">Choose a department</option>
-									<option value="1">Manufacturing</option>
-									<option value="2">Administration</option>
-									<option value="3">Support</option>
-								</select>
-							</div>
-						</div>
-						<div class="row">
-							<div class="12u">
-								<input class="text" type="text" name="subject" id="subject" value="" placeholder="Enter your subject" />
-							</div>
-						</div>
-						<div class="row">
-							<div class="12u">
-								<textarea name="message" id="message" placeholder="Enter your message"></textarea>
-							</div>
-						</div>
-						<div class="row">
-							<div class="12u">
-								<ul class="actions">
-									<li><input type="submit" value="Submit" /></li>
-									<li><input type="reset" class="style3" value="Clear Form" /></li>
-								</ul>
-							</div>
-						</div>
-					</form>
-				</section>
-			</article>
-		-->
 		
 		<section id="footer">
 			<ul class="icons">
@@ -313,13 +192,11 @@
 				<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
 				<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
 				<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
-				<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
 				<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
 			</ul>
 			<div class="copyright">
 				<ul class="menu">
-					<li>&copy; Sleepcatcher. All rights reserved.</li>
-					<li>Design: <a href="http://html5up.net">William Widjaja</a></li>
+					<li>&copy; Sleephacker. All rights reserved.</li>
 				</ul>
 			</div>
 		</section>
