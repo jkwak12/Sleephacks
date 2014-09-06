@@ -30,6 +30,6 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jkwak12/Sleephacks.git"
+    "url": "git://github.com/jkwak12/Sleephacks.git"
   }
 }
