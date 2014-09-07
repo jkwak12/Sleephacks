@@ -3,7 +3,7 @@ var request = require('request')
 var google = require('googleapis')
 var OAuth2 = google.auth.OAuth2
 
-var oauth2Client = new OAuth2(keys.config.google.key, keys.config.google.secret, 'http://sleephack.herokuapp.com/app')
+var oauth2Client = new OAuth2(keys.config.google.key, keys.config.google.secret, 'http://localhost:1337/app')
 google.options({ auth: oauth2Client })
 var calendar = google.calendar('v3')
 
@@ -34,6 +34,8 @@ module.exports = {
 
   getBusyTimes: function(req, res) {
 
+    /*
+
     request.debug = true
 
     var otherAuth = {
@@ -45,22 +47,32 @@ module.exports = {
     console.log(oauth2Client)
 
     
-    
+    console.log("entering options")
+
     var options = {
-      url: 'https://www.googleapis.com/calendar/v3/freeBusy',
+      url: 'https://www.googleapis.com/calendar/v3/freeBusy?fields=calendars,timeMax,timeMin',
       method: "POST",
-      json: '{timeMin: \"2014-08-06T04:47:09Z\", timeMax: \"2014-08-12T04:47:09Z\", items: ['+ req.query.calendars + ']}',
+      header: "Content-Type: application/json",
+      body: '{"timeMin": "2014-08-06T04:47:09+00:00", "timeMax": "2014-08-12T04:47:09+00:00", "items": ['+ req.query.calendars + ']}',
       qs: {key: keys.config.google.browserKey},
-      //oauth: oauth2Client,
-      Authorization: 'Bearer ' + oauth2Client.credentials.access_token,
+      oauth: oauth2Client,
+      //Authorization: 'Bearer ' + oauth2Client.credentials.access_token,
       'X-JavaScript-User-Agent': 'google-api-javascript-client/1.0.0-alpha'
     }
-
+    console.log("OPTTITTTOIIOONNS " + JSON.stringify(options))
     console.log(oauth2Client.credentials.access_token)
 
     request(options, function(err, response, body) {
+      if(err) {
+        console.log("ERRRRRRORRRRR: " + err)
+      }
+      console.log("RRRREEEESSSPONSEEE: " +response)
       res.send(body)
+      console.log("request send")
+
     })
+
+    */
 
     
 
