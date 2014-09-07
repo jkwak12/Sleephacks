@@ -5,7 +5,7 @@ angular.module('sleephack')
     })
 
   })
-  .factory('GoogleCalendar', function(Restangular) {
+  .factory('GoogleCalendar', function(Restangular, $q) {
     var restAngular = Restangular.withConfig(function(Configurer) {
       Configurer.setBaseUrl('/api')
     })
@@ -14,13 +14,20 @@ angular.module('sleephack')
 
     angular.extend(service, {
       getBusy: function(){
-        this.getList().then(function(results){
-          var allCalendars = results.filter(function(result){
-            console.log(result)
-            return result.id
+        return this.getList().then(function(results){
+          var allCalendars = results.map(function(result){
+            if (result.id) return {id: result.id}
           })
-          console.log(allCalendars)
-          return this.getList('busy', {calendars: allCalendars})
+
+          return restAngular.one('calendars').customGETLIST('busy', {calendars: allCalendars})
+
+          /*
+          return $q.all(
+            _.map(allCalendars, function(id) {
+              return restAngular.one('calendars').customGETLIST('busy', {calendarId: id.id})
+            }.bind(this)))
+          */
+          
         }.bind(this))
       }
     })
