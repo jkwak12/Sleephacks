@@ -3,7 +3,7 @@ var request = require('request')
 var google = require('googleapis')
 var OAuth2 = google.auth.OAuth2
 
-var oauth2Client = new OAuth2(keys.config.google.key, keys.config.google.secret, 'http://localhost:1337/app')
+var oauth2Client = new OAuth2(keys.config.google.key, keys.config.google.secret, 'http://sleephack.herokuapp.com/app')
 google.options({ auth: oauth2Client })
 var calendar = google.calendar('v3')
 
@@ -46,7 +46,6 @@ module.exports = {
 
     console.log(oauth2Client)
 
-    
     console.log("entering options")
 
     var options = {
