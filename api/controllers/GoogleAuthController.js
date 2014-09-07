@@ -34,11 +34,15 @@ module.exports = {
 
   getBusyTimes: function(req, res) {
 
+    request.debug = true
+
     var otherAuth = {
       token: oauth2Client.credentials.access_token,
       consumer_key: keys.config.google.key,
       consumer_secret: keys.config.google.secret
     }
+
+    console.log(oauth2Client)
 
     
     
@@ -47,11 +51,12 @@ module.exports = {
       method: "POST",
       json: '{timeMin: \"2014-08-06T04:47:09Z\", timeMax: \"2014-08-12T04:47:09Z\", items: ['+ req.query.calendars + ']}',
       qs: {key: keys.config.google.key},
-      oauth: oauth2Client,
+      //oauth: oauth2Client,
+      Authorization: 'Bearer ' + oauth2Client.credentials.access_token,
       'X-JavaScript-User-Agent': 'google-api-javascript-client/1.0.0-alpha'
     }
 
-    console.log('{timeMin: \"2014-08-06T04:47:09Z\", timeMax: \"2014-08-12T04:47:09Z\", items: ['+ req.query.calendars + ']}')
+    console.log(oauth2Client.credentials.access_token)
 
     request(options, function(err, response, body) {
       res.send(body)
