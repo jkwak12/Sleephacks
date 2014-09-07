@@ -22,7 +22,7 @@ angular.module('sleephack')
 
     this.getOauth = function() {
       GoogleOath.one('initial').get().then(function(results){
-        $window.location.href = results
+        //$window.location.href = results
       })
     }
 

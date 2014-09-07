@@ -14,7 +14,7 @@ angular.module('sleephack', [
         reloadOnSearch: false //added
       })
       .when('/app', {
-        templateUrl: '/templates/index.html',
+        templateUrl: '/templates/app.html',
         controller: 'AppController as ctrl',
         reloadOnSearch: false
       })
