@@ -50,7 +50,7 @@ module.exports = {
       url: 'https://www.googleapis.com/calendar/v3/freeBusy',
       method: "POST",
       json: '{timeMin: \"2014-08-06T04:47:09Z\", timeMax: \"2014-08-12T04:47:09Z\", items: ['+ req.query.calendars + ']}',
-      qs: {key: keys.config.google.serverKey},
+      qs: {key: keys.config.google.browserKey},
       //oauth: oauth2Client,
       Authorization: 'Bearer ' + oauth2Client.credentials.access_token,
       'X-JavaScript-User-Agent': 'google-api-javascript-client/1.0.0-alpha'
